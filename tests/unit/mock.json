@@ -1,0 +1,22 @@
+{
+  "login": {
+    "Body": [
+      {
+        "AuthType": "111111111",
+        "GroupName": "개발팀",
+        "LastLoginDT": "2022-04-15T11:03:36Z",
+        "LoginErrCnt": 0,
+        "PNumber": "01051005670",
+        "Password": "*B4F71052C89F08AB12F6EDB1979E358D1FD7BFD8",
+        "RegDT": "2021-07-20T09:49:47Z",
+        "UserID": "test1",
+        "UserName": "박형민"
+      }
+    ],
+    "Header": {
+      "CmdType": "10000",
+      "ErrCode": 0,
+      "ErrMsg": "정상"
+    }
+  }
+}
