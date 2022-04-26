@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "app2-member",
     component: app2,
   },
+  {
+    path: "/app2",
+    name: "app2",
+    component: app2,
+  },
 ]
 
 const router = createRouter({

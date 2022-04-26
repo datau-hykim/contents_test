@@ -1,7 +1,14 @@
 import { createStore } from "vuex"
-import { app2 } from "./modules/app2"
+import { App2State, app2 } from "./modules/app2"
+export interface RequestData {
+  Header: { CmdType: string }
+  Body: unknown
+}
 
-export default createStore({
+export interface RootState {
+  app2: App2State
+}
+export default createStore<RootState>({
   modules: {
     app2,
   },
