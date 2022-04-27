@@ -46,7 +46,11 @@ export const app2: Module<App2State, RootState> = {
         if (state.idx === keywords.length) {
           state.idx = 0
         }
-      }, 1000)
+      }, 3000)
     },
   },
 }
+
+// if (this.keywordlist[this.indexing].Arrow == "") {
+//   this.keywordlist[this.indexing].Arrow = "up"
+// }
