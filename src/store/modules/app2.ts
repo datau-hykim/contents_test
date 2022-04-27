@@ -3,7 +3,6 @@ import { Module } from "vuex"
 import { RequestData, RootState } from ".."
 
 export interface Keyword {
-  //[index: string]: string | number
   OrderNum: number
   Title: string
   ChangeNum: number
@@ -13,12 +12,14 @@ export interface Keyword {
 
 export interface App2State {
   keywordList: Keyword[]
+  idx: number
 }
 
 export const app2: Module<App2State, RootState> = {
   namespaced: true,
   state: {
     keywordList: [],
+    idx: 0,
   },
   actions: {
     async selectKeywordList({ commit }) {
@@ -38,8 +39,8 @@ export const app2: Module<App2State, RootState> = {
   mutations: {
     SET_KEYWORD_LIST(state, payload) {
       const keywords = JSON.parse(payload.data).Body
-      //console.log(keywords)
-      state.keywordList = keywords
+      //console.log(keywords[idx])
+      state.keywordList = keywords[state.idx]
     },
   },
 }
