@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { requestServer } from "@/service/network/network"
 import { Module } from "vuex"
 import { RequestData, RootState } from ".."
@@ -39,8 +40,13 @@ export const app2: Module<App2State, RootState> = {
   mutations: {
     SET_KEYWORD_LIST(state, payload) {
       const keywords = JSON.parse(payload.data).Body
-      //console.log(keywords[idx])
-      state.keywordList = keywords[state.idx]
+      setInterval(() => {
+        state.keywordList = keywords[state.idx]
+        state.idx++
+        if (state.idx === keywords.length) {
+          state.idx = 0
+        }
+      }, 1000)
     },
   },
 }
