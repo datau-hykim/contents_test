@@ -1,36 +1,34 @@
 <template>
-  <div>
-    <div class="head">금융사기 피해신고</div>
-    <div class="container">
-      <div class="hihi_1">
-        <div class="koo">
-          <div>금융사기 피해상담 및 환급</div>
-          <div class="hihihi">금융감독원</div>
-        </div>
-        <div class="koo2">
-          <div class="tt">1332</div>
-          <div class="eo">국번없이</div>
-        </div>
+  <div class="head">금융사기 피해신고</div>
+  <div class="container">
+    <div class="hihi_1">
+      <div class="koo">
+        <div>금융사기 피해상담 및 환급</div>
+        <div class="hihihi">금융감독원</div>
       </div>
-      <div class="hihi">
-        <div class="koo">
-          <div>지급정지</div>
-          <div class="hihihi">경찰청</div>
-        </div>
-        <div class="koo2">
-          <div class="tt">112</div>
-          <div class="eo">국번없이</div>
-        </div>
+      <div class="koo2">
+        <div class="tt">1332</div>
+        <div class="eo">국번없이</div>
       </div>
-      <div class="hihi">
-        <div class="koo">
-          <div>피싱사이트 신고</div>
-          <div class="hihihi">인터넷진흥원</div>
-        </div>
-        <div class="koo2">
-          <div class="tt">118</div>
-          <div class="eo">국번없이</div>
-        </div>
+    </div>
+    <div class="hihi">
+      <div class="koo">
+        <div>지급정지</div>
+        <div class="hihihi">경찰청</div>
+      </div>
+      <div class="koo2">
+        <div class="tt">112</div>
+        <div class="eo">국번없이</div>
+      </div>
+    </div>
+    <div class="hihi">
+      <div class="koo">
+        <div>피싱사이트 신고</div>
+        <div class="hihihi">인터넷진흥원</div>
+      </div>
+      <div class="koo2">
+        <div class="tt">118</div>
+        <div class="eo">국번없이</div>
       </div>
     </div>
   </div>
@@ -76,16 +74,25 @@ export default {
 }
 .hihihi {
   color: #019ddf;
+  padding-top: 6px;
 }
 .koo2 {
-  padding: 15px 30px 0 0;
-  flex-basis: 60px;
+  min-width: 108px;
+  padding: 15px 0px 10px 0;
+  /* flex-basis: 60px; */
+  box-sizing: border-box;
   text-align: center;
 }
+
 .head {
   padding: 0px 2px 10px;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  font-size: 16px;
 }
+.eo {
+  text-align: center;
+}
+
 @media screen and (max-width: 360px) {
   .hihihi {
     padding-top: 6px;
@@ -94,10 +101,40 @@ export default {
   .hihi {
     font-size: 16px;
   }
+  .hihi1 {
+    font-size: 16px;
+  }
   .eo {
+    padding-left: 26px;
     font-size: 11px;
   }
   .tt {
+    padding-left: 26px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .hihihi {
+    font-size: 16px;
+  }
+  .hihi {
+    font-size: 20px;
+  }
+  .hihi_1 {
+    font-size: 20px;
+  }
+  .eo {
+    font-size: 12px;
+    text-align: center;
+  }
+  .tt {
+    font-size: 35px;
+  }
+  /* .container {
+    width: 90%;
+  } */
+  .head {
     font-size: 30px;
   }
 }
