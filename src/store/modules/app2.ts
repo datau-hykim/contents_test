@@ -2,7 +2,7 @@
 import { requestServer } from "@/service/network/network"
 import { Module } from "vuex"
 import { RequestData, RootState } from ".."
-import { RequestApp2, NewPhishingDataType } from "@/service/network/request"
+import { RequestApp2, NewPhishingDataType, MainPhishingDataType } from "@/service/network/request"
 
 export interface Keyword {
   OrderNum: number
@@ -16,6 +16,7 @@ export interface App2State {
   keywordList: Keyword[]
   idx: number
   NewPhishingData: NewPhishingDataType[]
+	MainPhishingData: MainPhishingDataType[]
 }
 
 export const app2: Module<App2State, RootState> = {
@@ -24,6 +25,7 @@ export const app2: Module<App2State, RootState> = {
     keywordList: [],
     idx: 0,
     NewPhishingData: [],
+		MainPhishingData: [],
   },
   actions: {
     async selectKeywordList({ commit }) {
@@ -50,6 +52,21 @@ export const app2: Module<App2State, RootState> = {
 
       commit("SET_NEW_PHISHING_DATA", result)
     },
+		async requestMainPhishingData({ commit }, params) {
+			const { channel, month, page } = params
+			const { data } = await requestServer(RequestApp2.MainPhishingDataForm(channel, month, page))
+			const result = JSON.parse(data).Body
+			result.forEach((element: MainPhishingDataType) => {
+				element.CardThumbNail = "https://images.antiscam.co.kr/" + element.CardThumbNail
+				element.CardThumbNailAlt = decodeURIComponent(escape(window.atob(element.CardThumbNailAlt)))
+				element.CardTitle = decodeURIComponent(escape(window.atob(element.CardTitle)))
+				element.Title = decodeURIComponent(escape(window.atob(element.Title)))
+				element.altImages = element.altImages.map((altImgPath: string) => decodeURIComponent(escape(window.atob(altImgPath))))
+				element.images = element.images.map((imgPath: string) => "https://images.antiscam.co.kr/" + imgPath)
+			})
+			
+			commit("SET_MAIN_PHISHING_DATA", result)
+		}
   },
   mutations: {
     SET_KEYWORD_LIST(state, payload) {
@@ -69,5 +86,8 @@ export const app2: Module<App2State, RootState> = {
       state.NewPhishingData = payload
       console.log("무테이션")
     },
+		SET_MAIN_PHISHING_DATA(state, payload) {
+			state.MainPhishingData = payload
+		}
   },
 }

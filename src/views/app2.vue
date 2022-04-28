@@ -10,9 +10,9 @@
       <app-2-phishing-case />
     </section>
     <img src="@/assets/app2-banner2.jpg" />
-    <section>
+    <section class="section-phishing_case">
       <h2>주요 금융사기 유형</h2>
-      <!-- <app-2-phishing-main /> -->
+      <app-2-phishing-main />
       <!-- <app-2-pagination /> -->
     </section>
     <section>
@@ -25,11 +25,11 @@
 import { defineComponent } from "vue"
 import App2PhishingCase from "@/components/app2/App2PhishingCase.vue"
 import App2MainKeyword from "@/components/app2/App2MainKeyword.vue"
-// import App2PhishingMain from "@/components/app2/App2PhishingMain.vue"
+import App2PhishingMain from "@/components/app2/App2PhishingMain.vue"
 // import App2Pagination from "@/components/app2/App2Pagination.vue"
 
 export default defineComponent({
-  components: { App2MainKeyword, App2PhishingCase },
+  components: { App2MainKeyword, App2PhishingCase, App2PhishingMain },
   // setup() {
 
   // },
