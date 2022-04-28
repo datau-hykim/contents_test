@@ -15,8 +15,8 @@
       <!-- <app-2-phishing-main /> -->
       <!-- <app-2-pagination /> -->
     </section>
-    <section>
-      <h3>금융사기 피해신고</h3>
+    <section class="aaa">
+      <app-2-phishing-damage />
     </section>
   </div>
 </template>
@@ -25,11 +25,12 @@
 import { defineComponent } from "vue"
 import App2PhishingCase from "@/components/app2/App2PhishingCase.vue"
 import App2MainKeyword from "@/components/app2/App2MainKeyword.vue"
+import App2PhishingDamage from "@/components/app2/App2PhishingDamage.vue"
 // import App2PhishingMain from "@/components/app2/App2PhishingMain.vue"
 // import App2Pagination from "@/components/app2/App2Pagination.vue"
 
 export default defineComponent({
-  components: { App2MainKeyword, App2PhishingCase },
+  components: { App2MainKeyword, App2PhishingCase, App2PhishingDamage },
   // setup() {
 
   // },
