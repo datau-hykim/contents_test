@@ -1,0 +1,11 @@
+@import "./variables.scss";
+
+.section-phishing_case {
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: $mediaSize) {
+  .section-phishing_case {
+    padding: 0 30px;
+  }
+}

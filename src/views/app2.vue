@@ -5,9 +5,9 @@
     <section>
       <app-2-main-keyword />
     </section>
-    <section>
+    <section class="section-phishing_case">
       <h2>신종 금융사기 사례</h2>
-      <!-- <app-2-phishing-case /> -->
+      <app-2-phishing-case />
     </section>
     <img src="@/assets/app2-banner2.jpg" />
     <section>
@@ -23,13 +23,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
-// import App2PhishingCase from "@/components/app2/App2PhishingCase.vue"
+import App2PhishingCase from "@/components/app2/App2PhishingCase.vue"
+import App2MainKeyword from "@/components/app2/App2MainKeyword.vue"
 // import App2PhishingMain from "@/components/app2/App2PhishingMain.vue"
 // import App2Pagination from "@/components/app2/App2Pagination.vue"
-import App2MainKeyword from "@/components/app2/App2MainKeyword.vue"
 
 export default defineComponent({
-  components: { App2MainKeyword },
+  components: { App2MainKeyword, App2PhishingCase },
   // setup() {
 
   // },

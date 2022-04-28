@@ -1,0 +1,54 @@
+@import "./variables.scss";
+
+.App2PhishingCase {
+  .list-item {
+    display: flex;
+    padding: 10px 0;
+    align-content: center;
+  }
+  .item-date {
+    font-size: 12px;
+    text-align: center;
+    color: #909090;
+    flex-basis: 72px;
+    flex-shrink: 0; /* 기본값 */
+    img {
+      width: 36px;
+      margin: auto;
+    }
+  }
+  .item-title {
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .new {
+    font-weight: bold;
+    padding-top: 2px;
+  }
+}
+
+
+@media only screen and (min-width: $mediaSize) {
+  .App2PhishingCase {
+    .list-item {
+      border-bottom: 1px solid #f1f1f1;
+      padding: 20px 0;
+    }
+    .item-date {
+      font-size: 25px;
+      flex-basis: 125px;
+      img {
+        width: 72px;
+      }
+    }
+    .item-title {
+      font-size: 22px;
+    }
+    .new {
+      padding-top: 6px;
+    }
+  }
+}

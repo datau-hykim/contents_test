@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import url(app2.scss);
+@import url(App2PhishingCase.scss);
+
+.main-wrapper {
+  margin: auto;
+  max-width: 720px;
+  min-width: 360px;
+  background-color: red;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

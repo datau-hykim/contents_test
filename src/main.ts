@@ -5,8 +5,8 @@ import router from "./router"
 import store from "./store"
 import dayjs from "dayjs"
 
-import "@csstools/normalize.css"
 import "@/styles/index.scss"
+import "normalize.css"
 
 const app = createApp(App)
 

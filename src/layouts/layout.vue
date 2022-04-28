@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/no-empty-function */ /* eslint-disable vue/multi-word-component-names */
 <template>
-  <router-view />
+  <div class="main-wrapper">
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts">
