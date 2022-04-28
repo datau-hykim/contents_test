@@ -1,8 +1,14 @@
 <template>
-  <div v-if="data[idx]">
-    <div>{{ data[idx].Title }}</div>
-    <div>{{ data[idx].RegDT }}</div>
-    <div v-html="data[idx].Contents"></div>
+  <div class="phishingcase" v-if="data[idx]">
+    <div class="contents-wrapper">
+      <div class="contents-title">{{ data[idx].Title }}</div>
+      <div class="contents-date">{{ data[idx].RegDT }}</div>
+      <div class="contents-news" v-html="data[idx].Contents"></div>
+    </div>
+    <div class="button-wrapper">
+      <img src="@/assets/phishingcase-share_kakao.jpg" />
+      <img src="@/assets/phishingcase-join_antiscam.jpg" />
+    </div>
   </div>
 </template>
 

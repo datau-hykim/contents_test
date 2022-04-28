@@ -1,0 +1,28 @@
+.phishingcase {
+  .contents-wrapper {
+    padding: 10px;
+  }
+  .contents-title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .contents-date {
+    font-size: 13px;
+    color: #909090;
+    padding-top: 10px;
+  }
+  .contents-news {
+    font-size: 12px;
+    line-height: 1.4;
+    img {
+      width: 100%;
+    }
+  }
+  .button-wrapper {
+    display: flex;
+    width: 100%;
+    img {
+      width: 50%;
+    }
+  }
+}
