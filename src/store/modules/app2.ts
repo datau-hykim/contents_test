@@ -55,12 +55,15 @@ export const app2: Module<App2State, RootState> = {
     SET_KEYWORD_LIST(state, payload) {
       const keywords = JSON.parse(payload.data).Body
       setInterval(() => {
+        if (keywords[state.idx].Arrow == "") {
+          keywords[state.idx].Arrow = "up"
+        }
         state.keywordList = keywords[state.idx]
         state.idx++
         if (state.idx === keywords.length) {
           state.idx = 0
         }
-      }, 1000)
+      }, 3000)
     },
     SET_NEW_PHISHING_DATA(state, payload) {
       state.NewPhishingData = payload
