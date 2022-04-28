@@ -3,14 +3,13 @@
     <div class="keyword-highlight">주요피싱키워드</div>
     <div class="keyword-contents">
       <div class="keyword-news-ticker">
-        <div class="keyword-conetnts-text">{{ keywords.Title && `${keywords.OrderNum}. ${keywords.Title}` }}</div>
-        <!-- <div class="keyword-conetnts-image">
+        <div class="keyword-contents-text">{{ keywords.Title && `${keywords.OrderNum}. ${keywords.Title}` }}</div>
+        <div class="keyword-contents-image" v-if="keywords.Arrow">
           <img
-            class="keyword-conetnts-image-size"
-            :class="[keyword.Arrow]"
-            :src="require('@/assets/app2-mainkeyword-ticker_' + keyword.Arrow + '.png')"
+            class="keyword-contents-image-size"
+            :src="require(`@/assets/app2-mainkeyword-ticker_${keywords.Arrow}.png`)"
           />
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -25,10 +24,12 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     const keywords = computed(() => store.state.app2.keywordList)
+
     const retrieveData = async () => {
       await store.dispatch("app2/selectKeywordList")
     }
     retrieveData()
+
     return {
       keywords,
     }

@@ -3,6 +3,11 @@ import app2 from "@/views/app2.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: "/",
+    name: "default",
+    redirect: "/app2",
+  },
+  {
     path: "/app2/:channel/:month",
     name: "app2-month",
     component: app2,
