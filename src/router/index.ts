@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
 import layout from "@/layouts/layout.vue"
 import app2 from "@/views/app2.vue"
+import phishingcase from "@/views/phishingcase.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/app2",
         name: "app2",
         component: app2,
+      },
+      {
+        path: "/phishingcase/:idx",
+        name: "phishingcase",
+        component: phishingcase,
       },
     ],
   },

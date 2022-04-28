@@ -44,7 +44,8 @@ export const app2: Module<App2State, RootState> = {
       const result = JSON.parse(data).Body
       result.forEach((element: NewPhishingDataType) => {
         element.Title = decodeURIComponent(escape(window.atob(element.Title)))
-        element.RegDT = element.RegDT.substring(5, 10)
+        element.Contents = decodeURIComponent(escape(window.atob(element.Contents)))
+        element.RegDT = element.RegDT.substring(0, 10)
       })
       console.log(result)
 
