@@ -41,6 +41,9 @@ export const app2: Module<App2State, RootState> = {
     SET_KEYWORD_LIST(state, payload) {
       const keywords = JSON.parse(payload.data).Body
       setInterval(() => {
+        if (keywords[state.idx].Arrow == "") {
+          keywords[state.idx].Arrow = "up"
+        }
         state.keywordList = keywords[state.idx]
         state.idx++
         if (state.idx === keywords.length) {
@@ -50,7 +53,3 @@ export const app2: Module<App2State, RootState> = {
     },
   },
 }
-
-// if (this.keywordlist[this.indexing].Arrow == "") {
-//   this.keywordlist[this.indexing].Arrow = "up"
-// }
