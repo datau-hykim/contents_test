@@ -24,7 +24,6 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     const keywords = computed(() => store.state.app2.keywordList)
-
     const retrieveData = async () => {
       await store.dispatch("app2/selectKeywordList")
     }

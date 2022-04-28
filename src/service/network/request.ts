@@ -11,6 +11,17 @@ export const RequestApp2 = {
       },
     }
   },
+  GetPhishingkeyword: () => {
+    return {
+      Header: {
+        CmdType: "GetPhishingkeyword",
+      },
+      Body: {
+        Length: 4,
+        Offset: 0,
+      },
+    }
+  },
 }
 
 export interface NewPhishingDataType {
@@ -30,4 +41,12 @@ export interface NewPhishingDataType {
   serviceImg: string
   altImages: Array<string>
   images: Array<string>
+}
+
+export interface Keyword {
+  OrderNum: number
+  Title: string
+  ChangeNum: number
+  Arrow: string
+  IconNum: number
 }
