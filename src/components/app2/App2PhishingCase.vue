@@ -37,15 +37,4 @@ export default defineComponent({
     }
   },
 })
-// const keywords = JSON.parse(payload.data).Body
-// setInterval(() => {
-//   if (keywords[state.idx].Arrow == "") {
-//     keywords[state.idx].Arrow = "up"
-//   }
-//   state.keywordList = keywords[state.idx]
-//   state.idx++
-//   if (state.idx === keywords.length) {
-//     state.idx = 0
-//   }
-// }, 1000)
 </script>

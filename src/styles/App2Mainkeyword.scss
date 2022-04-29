@@ -1,51 +1,73 @@
-.keyword-box {
+@import "./variables.scss";
+
+.App2Mainkeyword {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 6.5px;
   background-color: #f3f5f8;
-  height: 55px;
 }
-.keyword-highlight {
+.keyword-title {
   text-orientation: upright;
   border-radius: 5px;
-  width: 30%;
   background-color: #e9333c;
-  font-family: NanumSquareB;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.9;
-  letter-spacing: -0.4px;
-  text-align: left;
   color: #ffffff;
   text-align: center;
-  vertical-align: middle;
-  font-size: 22px;
+  font-size: 13px;
+  width: 30%;
+  padding: 1.8px;
 }
-.keyword-contents {
-  width: 70vw;
+.keyword-contents-box {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-/* news ticker*/
-.keyword-news-ticker {
-  display: flex;
-  font-size: 3.5vw;
-  padding: 0.5vw;
   justify-content: space-around;
 }
-
 .keyword-contents-text {
-  width: 35vw;
-  padding-left: 0.5vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.keyword-contents-img {
+  padding: 3.5px 5px 0 0;
+  width: 4.5vw;
+  &.box {
+    width: 8vw;
+  }
 }
 
-.keyword-contents-image {
-  width: 7.5vw;
-}
-.keyword-contents-image-size {
-  width: 100%;
-}
+// .keyword-box {
+//   display: flex;
+//   flex-direction: row;
+//   margin: 0 auto;
+//   padding: 5.4px;
+//   border-radius: 6.5px;
+//   background-color: #f3f5f8;
+//   height: 23px;
+// }
+// .keyword-highlight {
+//   text-orientation: upright;
+//   border-radius: 5px;
+//   width: 30%;
+//   background-color: #e9333c;
+//   font-family: NanumSquareB;
+//   font-weight: normal;
+//   font-stretch: normal;
+//   font-style: normal;
+//   line-height: 1.9;
+//   letter-spacing: -0.4px;
+//   color: #ffffff;
+//   text-align: center;
+//   vertical-align: middle;
+//   font-size: 13px;
+//   padding: 0 1.8px 1.8px 3px;
+// }
+// .keyword-contents-text {
+//   width: 35vw;
+//   padding: 3px 5px 0 0;
+//   font-size: 13px;
+// }
+// .keyword-contents-image {
+//   padding: 3.5px 5px 0 0;
+//   width: 4.5vw;
+//   &.box {
+//     width: 8vw;
+//     padding: 3.5px 10px 0 0;
+//   }
+// }
