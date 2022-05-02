@@ -26,12 +26,9 @@ import { defineComponent } from "vue"
 import App2PhishingCase from "@/components/app2/App2PhishingCase.vue"
 import App2MainKeyword from "@/components/app2/App2MainKeyword.vue"
 import App2PhishingMain from "@/components/app2/App2PhishingMain.vue"
-// import App2Pagination from "@/components/app2/App2Pagination.vue"
 
 export default defineComponent({
   components: { App2MainKeyword, App2PhishingCase, App2PhishingMain },
-  // setup() {
-
-  // },
+  setup() {},
 })
 </script>

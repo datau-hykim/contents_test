@@ -13,6 +13,7 @@ export interface Keyword {
 }
 
 export interface App2State {
+  pcode: string
   keywordList: Keyword[]
   idx: number
   NewPhishingData: NewPhishingDataType[]
@@ -22,6 +23,7 @@ export interface App2State {
 export const app2: Module<App2State, RootState> = {
   namespaced: true,
   state: {
+    pcode: "",
     keywordList: [],
     idx: 0,
     NewPhishingData: [],
@@ -41,13 +43,12 @@ export const app2: Module<App2State, RootState> = {
       const result = await requestServer(httpData)
       if (result) commit("SET_KEYWORD_LIST", result)
     },
-    async requestNewPhishingData({ commit }) {
-      const { data } = await requestServer(RequestApp2.NewPhishingDataForm("123"))
+    async requestNewPhishingData({ state, commit }, payload) {
+      const { data } = await requestServer(RequestApp2.NewPhishingDataForm(state.pcode, payload.length, payload.offset))
       const result = JSON.parse(data).Body
       result.forEach((element: NewPhishingDataType) => {
         element.Title = decodeURIComponent(escape(window.atob(element.Title)))
         element.Contents = decodeURIComponent(escape(window.atob(element.Contents)))
-        element.RegDT = element.RegDT.substring(0, 10)
       })
       commit("SET_NEW_PHISHING_DATA", result)
     },
@@ -84,10 +85,12 @@ export const app2: Module<App2State, RootState> = {
     },
     SET_NEW_PHISHING_DATA(state, payload) {
       state.NewPhishingData = payload
-      console.log("무테이션")
     },
     SET_MAIN_PHISHING_DATA(state, payload) {
       state.MainPhishingData = payload
+    },
+    SET_PCODE(state, payload) {
+      state.pcode = payload
     },
   },
 }

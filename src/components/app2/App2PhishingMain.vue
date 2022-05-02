@@ -37,8 +37,11 @@ export default defineComponent({
         month: Number(params.month),
         page: page.value,
       })
+      console.log("불러오기")
     }
-    setData()
+    if (data.value.length !== 4) {
+      setData()
+    }
 
     const changePage = (idx: number) => {
       page.value = Number(idx)
