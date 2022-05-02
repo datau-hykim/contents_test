@@ -33,18 +33,21 @@ export const app2: Module<App2State, RootState> = {
     MainPhishingDataPage: 1,
   },
   actions: {
-    async selectKeywordList({ commit }) {
-      const httpData: RequestData = {
-        Header: {
-          CmdType: "GetPhishingkeyword",
-        },
-        Body: {
-          Length: 4,
-          Offset: 0,
-        },
-      }
-      const result = await requestServer(httpData)
-      if (result) commit("SET_KEYWORD_LIST", result)
+    async selectKeywordList({ state, commit }) {
+      const { data } = await requestServer(RequestApp2.GetPhishingkeyword())
+      const result = JSON.parse(data).Body
+      setInterval(() => {
+        if (result[state.idx].Arrow == "") {
+          result[state.idx].Arrow = "up"
+        }
+        state.keywordList = result[state.idx]
+        state.idx++
+        if (state.idx === result.length) {
+          state.idx = 0
+        }
+      }, 2000)
+
+      commit("SET_KEYWORD_LIST", result)
     },
     async requestNewPhishingData({ state, commit }, payload) {
       const { data } = await requestServer(RequestApp2.NewPhishingDataForm(state.pcode, payload.length, payload.offset))
@@ -74,17 +77,7 @@ export const app2: Module<App2State, RootState> = {
   },
   mutations: {
     SET_KEYWORD_LIST(state, payload) {
-      const keywords = JSON.parse(payload.data).Body
-      setInterval(() => {
-        if (keywords[state.idx].Arrow == "") {
-          keywords[state.idx].Arrow = "up"
-        }
-        state.keywordList = keywords[state.idx]
-        state.idx++
-        if (state.idx === keywords.length) {
-          state.idx = 0
-        }
-      }, 3000)
+      state.keywordList = payload
     },
     SET_NEW_PHISHING_DATA(state, payload) {
       state.NewPhishingData = payload

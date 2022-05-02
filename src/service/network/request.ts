@@ -11,6 +11,17 @@ export const RequestApp2 = {
       },
     }
   },
+  GetPhishingkeyword: () => {
+    return {
+      Header: {
+        CmdType: "GetPhishingkeyword",
+      },
+      Body: {
+        Length: 4,
+        Offset: 0,
+      },
+    }
+  },
   MainPhishingDataForm: (channel: string, month: number, page: number) => {
     return {
       Header: {
@@ -45,6 +56,13 @@ export interface NewPhishingDataType {
   images: Array<string>
 }
 
+export interface Keyword {
+  OrderNum: number
+  Title: string
+  ChangeNum: number
+  Arrow: string
+  IconNum: number
+}
 export interface MainPhishingDataType {
   CardThumbNail: string
   CardThumbNailAlt: string
