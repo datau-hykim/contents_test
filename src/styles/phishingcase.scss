@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .phishingcase {
   .contents-wrapper {
     padding: 10px;
@@ -23,6 +25,25 @@
     width: 100%;
     img {
       width: 50%;
+    }
+  }
+}
+
+
+@media only screen and (min-width: $mediaSize) {
+  .phishingcase {
+    .contents-title {
+      font-size: 20px;
+    }
+    .contents-date {
+      font-size: 18px;
+    }
+    .contents-news {
+      font-size: 18px;
+      line-height: 1.6;
+      span {
+        font-size: 18px !important;
+      }
     }
   }
 }

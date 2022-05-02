@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
         component: app2,
       },
       {
-        path: "/phishingcase/:idx",
+        path: "/phishingcase/:channel/:idx",
         name: "phishingcase",
         component: phishingcase,
       },

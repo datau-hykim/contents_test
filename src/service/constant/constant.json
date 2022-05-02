@@ -3,18 +3,12 @@
     "live": "https://owrs.antiscam.co.kr",
     "dev": "https://owrs.antiscam.co.kr"
   },
-
-  "Body": [
-    { "OrderNum": 1, "Title": "보이스피싱", "ChangeNum": 0, "Arrow": "hot", "IconNum": 1 },
-    { "OrderNum": 2, "Title": "개인정보", "ChangeNum": 0, "Arrow": "down", "IconNum": 4 },
-    { "OrderNum": 3, "Title": "서울", "ChangeNum": 0, "Arrow": "hot", "IconNum": 1 },
-    { "OrderNum": 4, "Title": "스미싱", "ChangeNum": 0, "Arrow": "hot", "IconNum": 1 },
-    { "OrderNum": 5, "Title": "금융감독원", "ChangeNum": 0, "Arrow": "down", "IconNum": 4 },
-    { "OrderNum": 6, "Title": "햇살론", "ChangeNum": 0, "Arrow": "new", "IconNum": 2 },
-    { "OrderNum": 7, "Title": "계좌", "ChangeNum": 0, "Arrow": "down", "IconNum": 4 },
-    { "OrderNum": 8, "Title": "금융사기", "ChangeNum": 0, "Arrow": "down", "IconNum": 4 },
-    { "OrderNum": 9, "Title": "대출", "ChangeNum": 0, "Arrow": "hot", "IconNum": 1 },
-    { "OrderNum": 10, "Title": "노인", "ChangeNum": 0, "Arrow": "up", "IconNum": 3 }
-  ],
-  "Header": { "CmdType": "GetPhishingkeyword", "ErrCode": 0, "ErrMsg": "완료" }
+  "url": {
+    "live": "https://contents.antiscam.co.kr",
+    "dev": "http://localhost:8080"
+  },
+  "image": {
+    "live": "https://images.antiscam.co.kr/",
+    "dev": "https://images.antiscam.co.kr/"
+  }
 }

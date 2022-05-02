@@ -1,13 +1,13 @@
 export const RequestApp2 = {
-  NewPhishingDataForm: (channel: string) => {
+  NewPhishingDataForm: (channel: string, length: number, offset: number) => {
     return {
       Header: {
         CmdType: "NewPhishingData",
       },
       Body: {
         PCode: channel,
-        Length: 4,
-        Offset: 0,
+        Length: length,
+        Offset: offset,
       },
     }
   },
