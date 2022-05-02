@@ -1,0 +1,80 @@
+@import "./variables.scss";
+
+.App2PhishingDamage {
+  border-top: 2px solid #04167c;
+  border-bottom: 2px solid #04167c;
+  display: block;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 0 60px 0;
+}
+.head-title {
+  padding: 0px 2px 10px;
+  box-sizing: content-box;
+  font-size: 16px;
+}
+
+.line-middle {
+  display: flex;
+  box-sizing: border-box;
+  border-top: 2px solid #e0e0e0;
+  justify-content: space-between;
+}
+.line-top {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.item-left {
+  padding: 15px 0 15px 10px;
+  display: block;
+  font-size: 16px;
+}
+.item-left-bottom {
+  color: #019ddf;
+  padding-top: 6px;
+  font-size: 14px;
+}
+.item-right {
+  min-width: 108px;
+  padding: 15px 0px 10px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+.item-right-bottom {
+  text-align: center;
+  padding-left: 20px;
+  font-size: 11px;
+}
+.item-right-top {
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+@media screen and (min-width: $mediaSize) {
+  .item-left-bottom {
+    padding-top: 6px;
+    font-size: 16px;
+  }
+  .line-middle {
+    font-size: 20px;
+  }
+  .line-top {
+    font-size: 16px;
+  }
+  .item-right {
+    padding: 15px 20px 10px 0;
+  }
+  .item-right-bottom {
+    font-size: 12px;
+  }
+  .item-right-top {
+    font-size: 35px;
+  }
+  .head-title {
+    font-size: 30px;
+  }
+  .item-left-top {
+    font-size: 20px;
+  }
+}

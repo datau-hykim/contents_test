@@ -2,10 +2,18 @@
 
 .section-phishing_case {
   padding: 0 10px;
+  box-sizing: border-box;
+}
+.section-phishing_damage {
+  padding: 9px;
+  box-sizing: border-box;
 }
 
 @media only screen and (min-width: $mediaSize) {
   .section-phishing_case {
     padding: 0 30px;
+  }
+  .section-phishing_damage {
+    padding: 13px;
   }
 }
