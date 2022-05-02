@@ -19,17 +19,17 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from "vue"
+import { computed, defineComponent } from "vue"
 import { useRoute } from "vue-router"
 import { useStore } from "vuex"
 import { MainPhishingDataType } from "@/service/network/request"
 
 export default defineComponent({
   setup() {
-    const { state, dispatch } = useStore()
+    const { state, dispatch, commit } = useStore()
     const data = computed(() => state.app2.MainPhishingData)
+    const page = computed(() => state.app2.MainPhishingDataPage)
     const { params } = useRoute()
-    const page = ref(1)
 
     const setData = async () => {
       await dispatch("app2/requestMainPhishingData", {
@@ -37,14 +37,13 @@ export default defineComponent({
         month: Number(params.month),
         page: page.value,
       })
-      console.log("불러오기")
     }
     if (data.value.length !== 4) {
       setData()
     }
 
     const changePage = (idx: number) => {
-      page.value = Number(idx)
+      commit("app2/SET_MAIN_PHISHING_DATA_PAGE", idx)
       setData()
     }
     const openThumbPop = (dataItem: MainPhishingDataType) => {

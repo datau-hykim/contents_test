@@ -14,6 +14,13 @@ export default defineComponent({
     const { params } = useRoute()
     const { commit } = useStore()
     commit("app2/SET_PCODE", params.channel)
+
+    // @ts-ignore
+    const kakao = window.Kakao
+    if (!kakao.isInitialized()) {
+      kakao.init("bc951a3379957948f164a0928420bea8")
+      console.log(kakao.isInitialized())
+    }
   },
 })
 </script>

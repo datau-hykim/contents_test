@@ -2,5 +2,13 @@
   "server": {
     "live": "https://owrs.antiscam.co.kr",
     "dev": "https://owrs.antiscam.co.kr"
+  },
+  "url": {
+    "live": "https://contents.antiscam.co.kr",
+    "dev": "http://localhost:8080"
+  },
+  "image": {
+    "live": "https://images.antiscam.co.kr/",
+    "dev": "https://images.antiscam.co.kr/"
   }
 }

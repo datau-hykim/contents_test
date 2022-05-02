@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { requestServer } from "@/service/network/network"
+import { serverURL, requestServer } from "@/service/network/network"
 import { Module } from "vuex"
 import { RequestData, RootState } from ".."
 import { RequestApp2, NewPhishingDataType, MainPhishingDataType } from "@/service/network/request"
+import constant from "@/service/constant/constant.json"
 
 export interface Keyword {
   OrderNum: number
@@ -18,6 +19,7 @@ export interface App2State {
   idx: number
   NewPhishingData: NewPhishingDataType[]
   MainPhishingData: MainPhishingDataType[]
+  MainPhishingDataPage: number
 }
 
 export const app2: Module<App2State, RootState> = {
@@ -28,6 +30,7 @@ export const app2: Module<App2State, RootState> = {
     idx: 0,
     NewPhishingData: [],
     MainPhishingData: [],
+    MainPhishingDataPage: 1,
   },
   actions: {
     async selectKeywordList({ commit }) {
@@ -57,14 +60,14 @@ export const app2: Module<App2State, RootState> = {
       const { data } = await requestServer(RequestApp2.MainPhishingDataForm(channel, month, page))
       const result = JSON.parse(data).Body
       result.forEach((element: MainPhishingDataType) => {
-        element.CardThumbNail = "https://images.antiscam.co.kr/" + element.CardThumbNail
+        element.CardThumbNail = serverURL(constant.image) + element.CardThumbNail
         element.CardThumbNailAlt = decodeURIComponent(escape(window.atob(element.CardThumbNailAlt)))
         element.CardTitle = decodeURIComponent(escape(window.atob(element.CardTitle)))
         element.Title = decodeURIComponent(escape(window.atob(element.Title)))
         element.altImages = element.altImages.map((altImgPath: string) =>
           decodeURIComponent(escape(window.atob(altImgPath)))
         )
-        element.images = element.images.map((imgPath: string) => "https://images.antiscam.co.kr/" + imgPath)
+        element.images = element.images.map((imgPath: string) => serverURL(constant.image) + imgPath)
       })
       commit("SET_MAIN_PHISHING_DATA", result)
     },
@@ -88,6 +91,9 @@ export const app2: Module<App2State, RootState> = {
     },
     SET_MAIN_PHISHING_DATA(state, payload) {
       state.MainPhishingData = payload
+    },
+    SET_MAIN_PHISHING_DATA_PAGE(state, payload) {
+      state.MainPhishingDataPage = payload
     },
     SET_PCODE(state, payload) {
       state.pcode = payload
