@@ -1,4 +1,5 @@
 <template>
+  <div class="head-title">신종 금융사기 사례</div>
   <div class="App2PhishingCase">
     <ul>
       <li @click="goPage(idx)" v-for="(item, idx) in data" :key="idx" class="list-item">

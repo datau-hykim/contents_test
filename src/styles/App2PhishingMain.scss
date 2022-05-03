@@ -1,10 +1,17 @@
 @import "./variables.scss";
 
+.head-title2 {
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 45px;
+  margin-bottom: 5px;
+}
 .conts-phishing_main {
   * {
     box-sizing: border-box;
   }
 }
+
 .phishing-main_contents {
   .contents-list {
     li {
@@ -27,6 +34,10 @@
       text-align: left;
       font-size: 12px;
       line-height: 1.6;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      -webkit-line-clamp: 2;
     }
   }
 }
@@ -46,6 +57,20 @@
     &.active {
       background-color: #0d89a7;
       color: #fff;
+    }
+  }
+}
+
+@media screen and (min-width: $mediaSize) {
+  .head-title2 {
+    font-size: 24px;
+  }
+  .phishing-main_contents {
+    .contents-thumb {
+      p {
+        text-align: left;
+        font-size: 20px;
+      }
     }
   }
 }

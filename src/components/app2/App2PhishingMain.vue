@@ -1,4 +1,5 @@
 <template>
+  <div class="head-title2">주요 금융사기 유형</div>
   <div class="conts-phishing_main">
     <div class="phishing-main_contents">
       <ol class="contents-list">

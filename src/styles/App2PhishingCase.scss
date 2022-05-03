@@ -1,9 +1,14 @@
 @import "./variables.scss";
 
+.head-title {
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 15px;
+}
 .App2PhishingCase {
   .list-item {
     display: flex;
-    padding: 10px 0;
+    padding: 11px 30px 11px 0px;
     align-content: center;
   }
   .item-date {
@@ -30,7 +35,6 @@
   }
 }
 
-
 @media only screen and (min-width: $mediaSize) {
   .App2PhishingCase {
     .list-item {
@@ -50,5 +54,9 @@
     .new {
       padding-top: 6px;
     }
+  }
+  .head-title {
+    font-size: 24px;
+    padding-top: 33px;
   }
 }

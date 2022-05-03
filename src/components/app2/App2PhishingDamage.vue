@@ -1,5 +1,5 @@
 <template>
-  <div class="head-title">금융사기 피해신고</div>
+  <div class="head-title3">금융사기 피해신고</div>
   <div class="App2PhishingDamage">
     <div class="line-top">
       <div class="item-left">

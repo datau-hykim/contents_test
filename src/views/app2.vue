@@ -6,12 +6,10 @@
       <app-2-main-keyword />
     </section>
     <section class="section-phishing_case">
-      <h2>신종 금융사기 사례</h2>
       <app-2-phishing-case />
     </section>
     <img src="@/assets/app2-banner2.jpg" />
     <section class="section-phishing_case">
-      <h2>주요 금융사기 유형</h2>
       <app-2-phishing-main />
     </section>
     <section class="section-phishing_damage">
