@@ -16,28 +16,28 @@
   .contents-list {
     li {
       display: inline-block;
+      max-width: 100%;
       width: 50%;
       padding: 4px;
     }
   }
   .contents-thumb {
     display: block;
-    .img {
-      display: block;
-      img {
-        width: 100%;
-        max-width: 100%;
-        vertical-align: top;
-      }
+    img {
+      width: 100%;
+      max-width: 100%;
+      vertical-align: top;
     }
     p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
       text-align: left;
+      -webkit-box-orient: vertical;
       font-size: 12px;
+      height: auto;
       line-height: 1.6;
       overflow: hidden;
       text-overflow: ellipsis;
-
-      -webkit-line-clamp: 2;
     }
   }
 }
