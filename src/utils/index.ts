@@ -35,6 +35,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation])
 import "swiper/swiper-bundle.min.css"
 import "swiper/swiper.min.css"
 import "swiper/components/navigation/navigation.min.css"
+import "swiper/components/pagination/pagination.min.css"
 
 export const deviceCheck = () => {
   const filter = "win|win32|win64|mac|macintel"
