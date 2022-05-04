@@ -18,6 +18,15 @@
     <section>
       <app-2-btn-link />
     </section>
+    <section class="home_container sec4">
+      <div class="contents">
+        <div class="howto_wrap">
+          <section class="tab_conts">
+            <ward-swiper />
+          </section>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -28,8 +37,9 @@ import App2MainKeyword from "@/components/app2/App2MainKeyword.vue"
 import App2PhishingMain from "@/components/app2/App2PhishingMain.vue"
 import App2PhishingDamage from "@/components/app2/App2PhishingDamage.vue"
 import App2BtnLink from "@/components/app2/App2BtnLink.vue"
+import WardSwiper from "@/components/WardSwiper.vue"
 
 export default defineComponent({
-  components: { App2MainKeyword, App2PhishingCase, App2PhishingMain, App2PhishingDamage, App2BtnLink },
+  components: { App2MainKeyword, App2PhishingCase, App2PhishingMain, App2PhishingDamage, App2BtnLink, WardSwiper },
 })
 </script>

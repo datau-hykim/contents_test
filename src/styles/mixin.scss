@@ -1,0 +1,101 @@
+$standard-size: 10;
+$assetImg: "~@/assets/";
+
+$conts-width-pc: 1200px;
+$conts-width-tablet: 540px;
+$conts-radius: 10px;
+$forms-radius: 6px;
+$layer-dim: rgba(0, 0, 0, 0.6);
+
+$break-tablet: 1200px;
+$break-mobile: 540px;
+$break-minimum: 360px;
+
+@mixin tablet {
+  @media all and (max-width: #{$break-tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media all and (max-width: #{$break-mobile}) {
+    @content;
+  }
+}
+
+@mixin minimum {
+  @media all and (max-width: #{$break-minimum}) {
+    @content;
+  }
+}
+
+@function ptr($px, $context: $standard-size) {
+  @return ($px/2) / $context * 1rem;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin pos($p: null, $l: null, $r: null, $t: null, $b: null) {
+  position: $p;
+  left: $l;
+  right: $r;
+  top: $t;
+  bottom: $b;
+}
+
+@mixin contShadow {
+  box-shadow: 0 3px 12px rgba(22, 0, 0, 0.16);
+}
+
+@mixin icoSet {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+@mixin bgSet {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+@mixin elip($type) {
+  @if $type== "line1" {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    max-width: 100%;
+  } @else if $type== "line2" {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+  } @else if $type== "line3" {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

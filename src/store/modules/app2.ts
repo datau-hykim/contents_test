@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { serverURL, requestServer } from "@/service/network/network"
 import { Module } from "vuex"
 import { RequestData, RootState } from ".."

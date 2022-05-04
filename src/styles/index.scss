@@ -3,7 +3,8 @@
 @import url(App2PhishingCase.scss);
 @import url(App2PhishingMain.scss);
 @import url(phishingcase.scss);
-
+@import "@/styles/mixin.scss";
+@import "@/styles/home.scss";
 .main-wrapper {
   margin: auto;
   max-width: 720px;
